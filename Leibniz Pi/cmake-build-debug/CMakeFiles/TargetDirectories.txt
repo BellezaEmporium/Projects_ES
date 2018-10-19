@@ -1,0 +1,3 @@
+C:/Users/ielki/Documents/CB Cesi/Leibniz Pi/cmake-build-debug/CMakeFiles/Leibniz_Pi.dir
+C:/Users/ielki/Documents/CB Cesi/Leibniz Pi/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/ielki/Documents/CB Cesi/Leibniz Pi/cmake-build-debug/CMakeFiles/rebuild_cache.dir
