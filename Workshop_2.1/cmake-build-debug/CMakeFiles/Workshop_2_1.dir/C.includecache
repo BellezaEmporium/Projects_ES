@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/ielki/Documents/CB Cesi/Workshop_2.1/main.c
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+
