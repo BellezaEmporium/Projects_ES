@@ -17,5 +17,5 @@ while True:
     msgClient = c.recv(1024)
     print msgClient
     if msgServeur.upper() == "FIN" or msgServeur == "" or msgClient.upper() == "FIN" or msgClient == "":
-       s.close()
+       c.close()
        break
