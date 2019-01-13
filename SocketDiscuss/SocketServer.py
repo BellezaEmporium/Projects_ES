@@ -16,6 +16,6 @@ while True:
     c.send(msgServeur)
     msgClient = c.recv(1024)
     print msgClient
-    if msgClient.upper() == "FIN" or msgClient == "":
-    c.close()
-    break
+    if msgServeur.upper() == "FIN" or msgServeur == "" or msgClient.upper() == "FIN" or msgClient == "":
+       s.close()
+       break
