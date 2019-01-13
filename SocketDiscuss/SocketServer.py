@@ -1,9 +1,10 @@
 import socket                 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)          
 print "Socket OK"
-port = 6969
-s.bind(('', port))      
-print "Le socket est en lien avec ce port-ci %s" %(port) 
+print "Quel port souhaitez vous utiliser"
+p = input()
+s.bind(('', p))      
+print "Le socket est en lien avec ce port-ci %s" %(p) 
 s.listen(5)      
 print "Le socket regarde la connexion..."            
 while True: 
