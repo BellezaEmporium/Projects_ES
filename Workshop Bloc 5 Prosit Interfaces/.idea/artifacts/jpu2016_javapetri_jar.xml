@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="jpu2016_javapetri:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/jpu2016_javapetri_jar</output-path>
+    <root id="archive" name="jpu2016_javapetri.jar">
+      <element id="module-output" name="jpu2016_javapetri" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/jpu2016_javapetri/src/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

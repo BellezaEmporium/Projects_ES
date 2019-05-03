@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_jpu2016_javapetri" default="compile.module.jpu2016_javapetri">
+  <dirname property="module.jpu2016_javapetri.basedir" file="${ant.file.module_jpu2016_javapetri}"/>
+  
+  <property name="module.jdk.home.jpu2016_javapetri" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.jpu2016_javapetri" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.jpu2016_javapetri" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.jpu2016_javapetri" value="-encoding UTF-8 -source 12 -target 12 ${compiler.args}"/>
+  
+  <property name="jpu2016_javapetri.output.dir" value="${module.jpu2016_javapetri.basedir}/../out/production/jpu2016_javapetri"/>
+  <property name="jpu2016_javapetri.testoutput.dir" value="${module.jpu2016_javapetri.basedir}/../out/test/jpu2016_javapetri"/>
+  
+  <path id="jpu2016_javapetri.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="jpu2016_javapetri.module.production.classpath">
+    <path refid="${module.jdk.classpath.jpu2016_javapetri}"/>
+  </path>
+  
+  <path id="jpu2016_javapetri.runtime.production.module.classpath">
+    <pathelement location="${jpu2016_javapetri.output.dir}"/>
+  </path>
+  
+  <path id="jpu2016_javapetri.module.classpath">
+    <path refid="${module.jdk.classpath.jpu2016_javapetri}"/>
+    <pathelement location="${jpu2016_javapetri.output.dir}"/>
+  </path>
+  
+  <path id="jpu2016_javapetri.runtime.module.classpath">
+    <pathelement location="${jpu2016_javapetri.testoutput.dir}"/>
+    <pathelement location="${jpu2016_javapetri.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.jpu2016_javapetri">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.jpu2016_javapetri">
+    <patternset refid="excluded.from.module.jpu2016_javapetri"/>
+  </patternset>
+  
+  <path id="jpu2016_javapetri.module.sourcepath">
+    <dirset dir="${module.jpu2016_javapetri.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.jpu2016_javapetri" depends="compile.module.jpu2016_javapetri.production,compile.module.jpu2016_javapetri.tests" description="Compile module jpu2016_javapetri"/>
+  
+  <target name="compile.module.jpu2016_javapetri.production" depends="register.custom.compilers" description="Compile module jpu2016_javapetri; production classes">
+    <mkdir dir="${jpu2016_javapetri.output.dir}"/>
+    <javac2 destdir="${jpu2016_javapetri.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.jpu2016_javapetri}/javac">
+      <compilerarg line="${compiler.args.jpu2016_javapetri}"/>
+      <bootclasspath refid="jpu2016_javapetri.module.bootclasspath"/>
+      <classpath refid="jpu2016_javapetri.module.production.classpath"/>
+      <src refid="jpu2016_javapetri.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.jpu2016_javapetri"/>
+    </javac2>
+    
+    <copy todir="${jpu2016_javapetri.output.dir}">
+      <fileset dir="${module.jpu2016_javapetri.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.jpu2016_javapetri.tests" depends="register.custom.compilers,compile.module.jpu2016_javapetri.production" description="compile module jpu2016_javapetri; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.jpu2016_javapetri" description="cleanup module">
+    <delete dir="${jpu2016_javapetri.output.dir}"/>
+    <delete dir="${jpu2016_javapetri.testoutput.dir}"/>
+  </target>
+</project>
