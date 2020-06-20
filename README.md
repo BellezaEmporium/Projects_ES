@@ -1,4 +1,4 @@
-# C_Projects-CESI
+# Projects_CESI
 Engineer school projects.
 
 Another site to use is : https://gitlab.com/exiaCesi.
